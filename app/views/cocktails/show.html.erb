@@ -1,0 +1,39 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 50%), url('https://images.pexels.com/photos/4784/alcohol-bar-party-cocktail.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+  <div class="banner-content">
+    <h1><em><%= @cocktail.name %></em></h1>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="cocktail-infos">
+
+    <div class="add-ingredients">
+      <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
+    </div>
+
+    <div class="ingredients-list">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <div class="ingredients-title"><h2>Ingredients</h2></div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cocktail.doses.each do |dose| %>
+          <tr>
+            <td><%= dose.description %> of <%= dose.ingredient.name %></td>
+            <td><%= link_to "", cocktail_dose_path(@cocktail, dose), class: "fas fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<%= link_to 'Back to list', cocktails_path %>
