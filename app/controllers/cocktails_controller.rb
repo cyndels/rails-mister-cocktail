@@ -23,7 +23,11 @@ class CocktailsController < ApplicationController
 
   def random
     @cocktail = Cocktail.order("RANDOM()").first
-    redirect_to cocktail_path(@cocktail)
+    if @cocktail
+      redirect_to cocktail_path(@cocktail)
+    else
+      redirect_to root_path
+    end
   end
 
   private
