@@ -9,9 +9,9 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to @cocktail
+      redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render :file => '/cocktails/show'
     end
   end
 

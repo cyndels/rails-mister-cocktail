@@ -21,13 +21,3 @@ ingredients.each do |ingredient|
 end
 
 puts 'Finished!'
-
-puts 'Create Cocktails...'
-Cocktail.create(name: 'Mojito')
-Cocktail.create(name: 'Sex on the Beach')
-Cocktail.create(name: 'Tequila Sunrise')
-Cocktail.create(name: 'Pina Colada')
-Cocktail.create(name: 'Punch Planter')
-Cocktail.create(name: 'Bloody Mary')
-
-puts 'Finished!'

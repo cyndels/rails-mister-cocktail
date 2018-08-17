@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 
-.btn-outline-white {
+.btn-outline-white, .btn-outline-black {
   padding: 0.8em 2em;
   font-family: $headers-font;
   border-radius: 50px;
@@ -21,3 +21,34 @@
   margin-left: 20px;
 }
 
+.btn-outline-black {
+  border: 1px solid black;
+  color: black;
+  margin-top: 50px;
+}
+
+.btn-outline-black:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.delete-btn {
+  color: black;
+  opacity: 0.2;
+  font-size: 18px;
+  margin-left: 50px;
+}
+
+.delete-btn:hover {
+  color: black;
+  opacity: 0.4;
+}
+
+.btn-smaller {
+  padding: 0.7em 1.7em;
+  margin-right: 20px;
+  margin-bottom: 3px;
+  margin-top: 0;
+  background: white;
+}
