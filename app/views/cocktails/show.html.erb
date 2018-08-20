@@ -7,23 +7,25 @@
 <div class="container">
 
   <div class="cocktail-infos">
-
-    <div class="add-ingredients">
-      <%= render :file => '/doses/new' %>
-    </div>
-
-    <div class="ingredients-list">
-      <div class="ingredients-title"><h2>Ingredients</h2></div>
-      <div class="ingredients-name">
-        <ul>
-          <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name %> (<%= dose.description %>) <%= link_to "", cocktail_dose_path(@cocktail, dose), class: "fas fa-trash-alt delete-btn", method: :delete, data: { confirm: "Are you sure?" } %></li>
-          <% end %>
-        </ul>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="ingredients-list">
+          <div class="ingredients-title"><h2>Ingredients</h2></div>
+          <div class="ingredients-name">
+            <ul>
+              <% @cocktail.doses.each do |dose| %>
+              <li><%= dose.ingredient.name %> (<%= dose.description %>) <%= link_to "", cocktail_dose_path(@cocktail, dose), class: "fas fa-trash-alt delete-btn", method: :delete, data: { confirm: "Are you sure?" } %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
-
+      <div class="col-xs-12 col-md-6">
+        <div class="add-ingredients">
+          <%= render :file => '/doses/new' %>
+        </div>
+      </div>
     </div>
-
   </div>
 
 </div>
